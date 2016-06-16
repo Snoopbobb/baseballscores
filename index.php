@@ -234,6 +234,15 @@ if ($_GET['date'] === NULL) {
 	<!-- <h1><?php echo htmlentities($xml->go_game[0]->team[0]['name']); ?></h1>
 	<h2><?php echo $xml->go_game[0]->gameteam; ?></h2>
 	<h1><?php echo $xml->go_game[0]->team[1]['name']; ?></h1> -->
+    <!-- cdn for modernizr, if you haven't included it already -->
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+    <!-- polyfiller file to detect and load polyfills -->
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+    <script>
+      webshims.setOptions('waitReady', false);
+      webshims.setOptions('forms-ext', {types: 'date'});
+      webshims.polyfill('forms forms-ext');
+    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
